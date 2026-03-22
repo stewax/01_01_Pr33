@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ChatStudents_Kazakov.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ChatStudents_Kazakov.Models
 {
@@ -25,5 +27,7 @@ namespace ChatStudents_Kazakov.Models
         {
             return $" [Lastname] [Firstname] [Surname] ";
         }
+
+        
     }
 }
