@@ -33,7 +33,9 @@ namespace ChatStudents_Kazakov.Pages.Items
             FIO.Content = user.ToFIO();
         }
 
-        private void SelectChat(object sender, System.Windows.Input.MouseButtonEventArgs e) =>
+        private void SelectChatt(object sender, MouseButtonEventArgs e)
+        {
             main.SelectUser(user);
+        }
     }
 }

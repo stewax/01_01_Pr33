@@ -1,32 +1,24 @@
-﻿using Azure.Messaging;
-using ChatStudents_Kazakov.Classes;
+﻿using ChatStudents_Kazakov.Classes;
 using ChatStudents_Kazakov.Classes.Common;
 using ChatStudents_Kazakov.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace ChatStudents_Kazakov.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Main.xaml
-    /// </summary>
     public partial class Main : Page
     {
         public DispatcherTimer _timer;
+
+        public Users SelectedUser;
+
+        private UsersContext _db = new UsersContext();
+
         public Main()
         {
             InitializeComponent();
@@ -38,11 +30,11 @@ namespace ChatStudents_Kazakov.Pages
         {
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(5);
-            _timer.Tick += Timer_TIck;
+            _timer.Tick += Timer_Tick;
             _timer.Start();
         }
 
-        private void Timer_Tick(object sender, System.EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             if (SelectedUser != null)
                 SelectUser(SelectedUser);
@@ -50,10 +42,14 @@ namespace ChatStudents_Kazakov.Pages
 
         public void LoadUsers()
         {
-            foreach (Users user in UsersContext.Users) 
+            ParentUsers.Children.Clear();
+
+            foreach (Users user in _db.Users.ToList())
             {
                 if (user.Id != MainWindow.Instance.LoginUser.Id)
-                    ParentUsers.Children.Add(new Pages.Items.Users(user, this));)
+                {
+                    ParentUsers.Children.Add(new Pages.Items.User(user, this));
+                }
             }
         }
 
@@ -63,25 +59,33 @@ namespace ChatStudents_Kazakov.Pages
             Chat.Visibility = Visibility.Visible;
             imgUser.Source = BitmapFromArrayByte.LoadImage(User.Photo);
             FIO.Content = User.ToFIO();
+
             ParentMessages.Children.Clear();
-            foreach (Messages Message in MessageContent.Messages.Where(x =>
+
+            var messages = _db.Messages.Where(x =>
                 (x.UserFrom == User.Id && x.UserTo == MainWindow.Instance.LoginUser.Id) ||
-                (x.UserFrom == MainWindow.Instance.LoginUser.Id && x.UserTo == User.Id)))
+                (x.UserFrom == MainWindow.Instance.LoginUser.Id && x.UserTo == User.Id)).ToList();
+
+            foreach (Messages message in messages)
             {
-                ParentMessages.Children.Add(new Pages.Items.Message(Message, UsersContext.Users.Where(x => x.Id == Message.UserFrom).First()));
+                var senderUser = _db.Users.FirstOrDefault(x => x.Id == message.UserFrom);
+                ParentMessages.Children.Add(new Pages.Items.Message(message, senderUser));
             }
         }
 
-        private void Send(object sender, EventArgs e)
+        private void Send(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter && SelectedUser != null && !string.IsNullOrWhiteSpace(Message.Text))
             {
-                Messages message = new Messages(
+                Messages newMessage = new Messages(
+                    MainWindow.Instance.LoginUser.Id,
                     SelectedUser.Id,
                     Message.Text);
-                MessagesContext.Messages.Add(message);
-                MessagesContext.SaveChanges();
-                ParentMessages.Children.Add(new Pages.Items.Message(message, MainWindow.Instance.LoginUser));
+
+                _db.Messages.Add(newMessage);
+                _db.SaveChanges();
+
+                ParentMessages.Children.Add(new Pages.Items.Message(newMessage, MainWindow.Instance.LoginUser));
                 Message.Text = "";
             }
         }

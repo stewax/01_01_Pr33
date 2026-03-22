@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <Grid Background="#ff0071ff" Height="50" VerticalAlignment="Top">
-            <Image Margin="10" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/logo.png"/>
+            <Image Margin="10" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Images/Tab2.png"/>
             <Label Content="ВПате" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50, 5, 0, 0"
                    Foreground="White" FontWeight="Bold" FontSize="20"/>
         </Grid>
@@ -27,13 +27,13 @@
             <Grid Grid.Column="1" x:Name="Chat" Visibility="Hidden">
                 <Grid Height="50" VerticalAlignment="Top">
                     <Image x:Name="imgUser" Margin="10, 0, 0, 0" Width="30" Height="30" HorizontalAlignment="Left"
-                           Source="/Images/ic-user.png">
+                           Source="/Images/Tab2.png">
                         <Image.Clip>
                             <RectangleGeometry RadiusX="15" RadiusY="15" Rect="0,0,30,30"/>
                         </Image.Clip>
                     </Image>
                     <Image Width="10" Height="10" Margin="30, 30, 0, 0" HorizontalAlignment="Left"
-                           Source="/Images/ic-online.png" Visibility="Hidden"/>
+                           Source="/Images/Tab2.png" Visibility="Hidden"/>
                     <Label x:Name="FIO" Content="Иванов Иван Иванович" Margin="45, 0, 0, 0"
                            VerticalAlignment="Top" FontWeight="Bold" FontSize="10"/>
                 </Grid>

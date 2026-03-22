@@ -25,7 +25,7 @@ namespace ChatStudents_Kazakov.Models
 
         public string ToFIO()
         {
-            return $" [Lastname] [Firstname] [Surname] ";
+            return $" {Lastname} {Firstname} {Surname}";
         }
 
         

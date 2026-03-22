@@ -8,6 +8,6 @@ namespace ChatStudents_Kazakov.Classes.Common
 {
     public class Config
     {
-        public static readonly string config = "Server=student.permaviat.ru;Trusted_Connection=False;Database=;User=Pwd=;";
+        public static string config = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ChatDatabase;Integrated Security=True;";
     }
 }

@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 
 namespace ChatStudents_Kazakov.Classes
 {
-    public class UsersContext
+    public class UsersContext : DbContext
     {
-        public DbSet<Users> Users {  get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Messages> Messages { get; set; }
+
         public UsersContext()
         {
             Database.EnsureCreated();
