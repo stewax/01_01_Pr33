@@ -1,5 +1,5 @@
-﻿using ChatStudents_Kazakov.Classes.Common;
-using ChatStudents_Kazakov.Models;
+﻿using ChatStudents_Osennikov.Classes.Common;
+using ChatStudents_Osennikov.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ChatStudents_Kazakov.Pages.Items
+namespace ChatStudents_Osennikov.Pages.Items
 {
     /// <summary>
     /// Логика взаимодействия для Message.xaml

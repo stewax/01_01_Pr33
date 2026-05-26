@@ -1,4 +1,4 @@
-﻿using ChatStudents_Kazakov.Classes;
+﻿using ChatStudents_Osennikov.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ChatStudents_Kazakov.Models
+namespace ChatStudents_Osennikov.Models
 {
     public class Users {
         public int Id {  get; set; }

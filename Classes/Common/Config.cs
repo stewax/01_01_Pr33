@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatStudents_Kazakov.Classes.Common
+namespace ChatStudents_Osennikov.Classes.Common
 {
     public class Config
     {

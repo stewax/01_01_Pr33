@@ -1,6 +1,6 @@
-﻿using ChatStudents_Kazakov.Classes;
-using ChatStudents_Kazakov.Classes.Common;
-using ChatStudents_Kazakov.Models;
+﻿using ChatStudents_Osennikov.Classes;
+using ChatStudents_Osennikov.Classes.Common;
+using ChatStudents_Osennikov.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace ChatStudents_Kazakov.Pages
+namespace ChatStudents_Osennikov.Pages
 {
     public partial class Main : Page
     {

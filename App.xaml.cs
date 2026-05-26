@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace ChatStudents_Kazakov
+namespace ChatStudents_Osennikov
 {
     /// <summary>
     /// Interaction logic for App.xaml

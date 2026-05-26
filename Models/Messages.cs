@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatStudents_Kazakov.Models
+namespace ChatStudents_Osennikov.Models
 {
     public class Messages
     {

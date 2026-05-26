@@ -1,5 +1,5 @@
-﻿using ChatStudents_Kazakov.Classes;
-using ChatStudents_Kazakov.Models;
+﻿using ChatStudents_Osennikov.Classes;
+using ChatStudents_Osennikov.Models;
 using Microsoft.Win32;
 using System;
 using System.IO;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ChatStudents_Kazakov.Pages
+namespace ChatStudents_Osennikov.Pages
 {
     /// <summary>
     /// Логика взаимодействия для Login.xaml

@@ -1,4 +1,4 @@
-﻿using ChatStudents_Kazakov.Models;
+﻿using ChatStudents_Osennikov.Models;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ChatStudents_Kazakov
+namespace ChatStudents_Osennikov
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

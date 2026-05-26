@@ -1,14 +1,14 @@
-﻿using ChatStudents_Kazakov.Classes.Common;
+﻿using ChatStudents_Osennikov.Classes.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using ChatStudents_Kazakov.Models;
+using ChatStudents_Osennikov.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatStudents_Kazakov.Classes
+namespace ChatStudents_Osennikov.Classes
 {
     public class UsersContext : DbContext
     {

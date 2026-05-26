@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace ChatStudents_Kazakov.Classes.Common
+namespace ChatStudents_Osennikov.Classes.Common
 {
     public class BitmapFromArrayByte
     {
